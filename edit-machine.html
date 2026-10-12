@@ -4,99 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Редактировать станок — ТЕМП</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap-theme.css">
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
     <header>
-        <div class="header-logo">
-            <img src="logoTemp.jpg" alt="Логотип ТЕМП">
-            <span>ТЕМП</span>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="about.html">О нас</a></li>
-                <li><a href="catalog.html">Каталог</a></li>
-                <li><a href="index.html" class="logout-btn">Выйти</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg temp-navbar container">
+            <a class="navbar-brand d-flex align-items-center gap-5 fw-bold" href="index.html">
+                <img src="logoTemp.jpg" alt="Логотип ТЕМП" width="40" height="40">
+                <span>ТЕМП</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                    aria-controls="mainNav" aria-expanded="false" aria-label="Открыть меню">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav w-100 align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link rounded-pill px-3 fs-6 fw-semibold" href="index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link rounded-pill px-3 fs-6 fw-semibold" href="about.html">О нас</a></li>
+                    <li class="nav-item"><a class="nav-link rounded-pill px-3 fs-6 fw-semibold" href="catalog.html">Каталог</a></li>
+                    <li class="nav-item ms-lg-auto"><a class="nav-link rounded-pill px-3 fs-6 fw-semibold" href="index.html">Выйти</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
-    <main class="add-machine-page">
-        <a href="admin.html" class="back-link">←</a>
-        <h1>Редактировать станок</h1>
+    <main class="container py-5 flex-grow-1">
+        <a href="admin.html" class="btn btn-link fs-3 fw-bold p-0 mb-3 text-decoration-none" aria-label="Назад">←</a>
+        <h1 class="text-center text-primary fw-bold mb-5">Редактировать станок</h1>
 
-        <form class="add-machine-form">
-            <div>
-                <div class="photo-upload">
-                    <img src="16К20.jpeg" alt="Текущее фото" class="photo-current">
-                    <p class="photo-caption">Изменить фото станка</p>
-                    <input type="file" accept="image/*" id="edit-photo" hidden>
+        <form class="card border-primary rounded-5 p-4 p-md-5">
+            <div class="row g-5">
+                <div class="col-lg-5">
+                    <label for="photo" class="upload-zone position-relative overflow-hidden d-flex flex-column align-items-center justify-content-center text-center border rounded-4 bg-body-tertiary p-4 w-100">
+                        <img src="16К20.jpeg" alt="Текущее фото станка" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover">
+                        <span class="position-relative bg-white bg-opacity-75 rounded-3 px-2 py-1 fs-6 text-secondary">Изменить фото станка</span>
+                        <input type="file" class="visually-hidden" id="photo" accept="image/*">
+                    </label>
+
+                    <h2 class="fs-5 fw-semibold text-center mt-4 mb-3">Контактные данные</h2>
+                    <input type="email" class="form-control rounded-pill py-3 px-4 mb-3" aria-label="Email для связи" value="victoria@temp.ru">
+                    <input type="tel" class="form-control rounded-pill py-3 px-4" aria-label="Телефон для связи" value="+7 (992) 433-12-12">
                 </div>
 
-                <div class="contact-block">
-                    <h3>Контактные данные</h3>
-                    <input type="email" value="victoria@temp.ru">
-                    <input type="tel" value="+7 (992) 433-12-12">
+                <div class="col-lg-7 d-flex flex-column gap-3">
+                    <input type="text" class="form-control rounded-pill py-3 px-4" aria-label="Название станка" value="Токарный станок 16К20">
+
+                    <div class="btn-group btn-group-lg condition-group w-100 border border-primary rounded-pill overflow-hidden" role="group" aria-label="Состояние станка">
+                        <input type="radio" class="btn-check" name="condition" id="used" autocomplete="off" checked>
+                        <label class="btn btn-outline-primary border-0 py-3" for="used">Б/У</label>
+
+                        <input type="radio" class="btn-check" name="condition" id="new" autocomplete="off">
+                        <label class="btn btn-outline-primary border-0 py-3" for="new">Новый</label>
+
+                        <input type="radio" class="btn-check" name="condition" id="refurbished" autocomplete="off">
+                        <label class="btn btn-outline-primary border-0 py-3" for="refurbished">Капитальный ремонт</label>
+                    </div>
+
+                    <input type="text" class="form-control rounded-pill py-3 px-4" aria-label="Тип станка" value="Токарный">
+                    <input type="text" class="form-control rounded-pill py-3 px-4" aria-label="Местоположение станка" value="Волгоградская область">
+                    <input type="number" class="form-control rounded-pill py-3 px-4" id="price-input" aria-label="Цена станка" value="1500000">
+
+                    <div class="form-check fs-5">
+                        <input class="form-check-input" type="checkbox" id="negotiable">
+                        <label class="form-check-label" for="negotiable">Цена договорная</label>
+                    </div>
+                </div>
+
+                <div class="col-12 d-grid d-md-flex justify-content-md-center">
+                    <button type="submit" class="btn btn-primary btn-lg rounded-pill px-5 py-3">Сохранить изменения</button>
                 </div>
             </div>
-
-            <div class="form-fields">
-                <input type="text" value="Токарный станок 16К20">
-
-                <div class="segmented-control">
-                    <input type="radio" name="condition" id="edit-used" checked>
-                    <label for="edit-used">Б/У</label>
-                    
-                    <input type="radio" name="condition" id="edit-new">
-                    <label for="edit-new">Новый</label>
-                    
-                    <input type="radio" name="condition" id="edit-refurbished">
-                    <label for="edit-refurbished">Капитальный ремонт</label>
-                </div>
-
-                <input type="text" value="Токарный">
-                <input type="text" value="Волгоградская область">
-                <input type="number" value="1500000" id="edit-price-input">
-
-                <div class="checkbox-group">
-                    <input type="checkbox" id="edit-negotiable">
-                    <label for="edit-negotiable">Цена договорная</label>
-                </div>
-            </div>
-
-            <button type="submit" class="btn btn-primary submit-btn">Сохранить изменения</button>
         </form>
     </main>
 
-    <footer>
-        <div class="container">
+    <footer class="bg-secondary text-white py-5 mt-5">
+        <div class="container d-flex flex-column flex-md-row justify-content-between gap-3 text-center text-md-start">
             <div>
-                <p>
-                    <img src="icon-mail-white.png" alt="" class="icon-sm">
-                    <a href="mailto:info@temp.ru">info@temp.ru</a>
+                <p class="d-flex align-items-center justify-content-center justify-content-md-start gap-2 mb-3">
+                    <img src="icon-mail-white.png" alt="" width="18" height="18">
+                    <a class="link-light" href="mailto:info@temp.ru">info@temp.ru</a>
                 </p>
-                <p>
-                    <img src="icon-phone.png" alt="" class="icon-sm icon-phone">
-                    <a href="tel:+79289641260">+7 (928) 964-12-60</a>
+                <p class="d-flex align-items-center justify-content-center justify-content-md-start gap-2 mb-3">
+                    <img src="icon-phone.png" alt="" width="18" height="18" class="icon-phone">
+                    <a class="link-light" href="tel:+79289641260">+7 (928) 964-12-60</a>
                 </p>
-                <p>ИНН: [номер]</p>
+                <p class="mb-0">ИНН: [номер]</p>
             </div>
-            <div class="copyright">
-                <p>&copy; 2016-2026. ООО "ТЕМП"</p>
+            <div class="text-md-end">
+                <p class="mb-0">&copy; 2016-2026. ООО "ТЕМП"</p>
             </div>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const checkbox = document.getElementById('edit-negotiable');
-        const priceInput = document.getElementById('edit-price-input');
-        if(checkbox && priceInput) {
-            checkbox.addEventListener('change', () => {
-                priceInput.disabled = checkbox.checked;
-                if (checkbox.checked) priceInput.value = '';
-            });
-        }
+        const checkbox = document.getElementById('negotiable');
+        const priceInput = document.getElementById('price-input');
+        checkbox.addEventListener('change', () => {
+            priceInput.disabled = checkbox.checked;
+            if (checkbox.checked) priceInput.value = '';
+        });
     </script>
 </body>
 </html>
