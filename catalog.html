@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог — ТЕМП</title>
+</head>
+<body>
+    <header>
+        <div class="header-logo">
+            <img src="logoTemp.jpg" alt="Логотип ТЕМП">
+            <span>ТЕМП</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="catalog.html" class="active">Каталог</a></li>
+                <li><a href="login.html">Войти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Каталог промышленного оборудования</h1>
+
+        <section class="filters-section">
+            <form class="filters-form">
+                <div class="search-wrapper">
+                    <img src="icon-search.png" alt="Поиск" class="search-icon">
+                    <input type="text" placeholder="Поиск">
+                </div>
+                
+                <div class="filter-group">
+                    <label for="type">Тип станка</label>
+                    <select id="type">
+                        <option value="">Все типы</option>
+                        <option value="lathe">Токарный</option>
+                        <option value="milling">Фрезерный</option>
+                        <option value="drilling">Сверлильный</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="condition">Состояние</label>
+                    <select id="condition">
+                        <option value="">Любое</option>
+                        <option value="new">Новое</option>
+                        <option value="used">Б/У</option>
+                        <option value="refurbished">После капремонта</option>
+                    </select>
+                </div>
+
+                <div class="filter-buttons">
+                    <button type="reset" class="btn-outline">Сбросить</button>
+                    <button type="submit" class="btn-primary">Применить</button>
+                </div>
+            </form>
+        </section>
+
+        <div class="machines-grid">
+            <!-- Карточка 1 -->
+            <article class="machine-card">
+                <img src="16К20.jpeg" alt="Токарный станок 16К20" class="card-img">
+                <div class="card-header">
+                    <h3>Токарный станок 16К20</h3>
+                    <span class="card-category">
+                        <img src="icon-gear.png" alt="" class="icon-sm"> Токарный
+                    </span>
+                </div>
+                <div class="card-region">
+                    <img src="icon-pin.png" alt="" class="icon-sm"> ЮФО
+                </div>
+                <div class="card-footer">
+                    <span class="price">1 500 000 ₽</span>
+                    <a href="machine.html" class="btn btn-primary">Подробнее</a>
+                </div>
+            </article>
+
+            <!-- Карточка 2 -->
+            <article class="machine-card">
+                <img src="1А64.jpeg" alt="1А64 РМЦ2800" class="card-img">
+                <div class="card-header">
+                    <h3>1А64 РМЦ2800</h3>
+                    <span class="card-category">
+                        <img src="icon-gear.png" alt="" class="icon-sm"> Токарный
+                    </span>
+                </div>
+                <div class="card-region">
+                    <img src="icon-pin.png" alt="" class="icon-sm"> Ленинградская обл.
+                </div>
+                <div class="card-footer">
+                    <span class="price">5 690 000 ₽</span>
+                    <a href="machine.html" class="btn btn-primary">Подробнее</a>
+                </div>
+            </article>
+
+            <!-- Карточка 3 -->
+            <article class="machine-card">
+                <img src="2С32.jpeg" alt="2С32" class="card-img">
+                <div class="card-header">
+                    <h3>2С32</h3>
+                    <span class="card-category">
+                        <img src="icon-gear.png" alt="" class="icon-sm"> Вертикально-сверлильный
+                    </span>
+                </div>
+                <div class="card-region">
+                    <img src="icon-pin.png" alt="" class="icon-sm"> Москва
+                </div>
+                <div class="card-footer">
+                    <span class="price">774 125 ₽</span>
+                    <a href="machine.html" class="btn btn-primary">Подробнее</a>
+                </div>
+            </article>
+            
+            <!-- Можно добавить еще карточки по аналогии -->
+        </div>
+
+        <nav class="pagination" aria-label="Пагинация">
+            <a href="?page=1" class="active">1</a>
+            <a href="?page=2">2</a>
+            <a href="?page=3">3</a>
+            <span>...</span>
+            <a href="?page=22">22</a>
+        </nav>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div>
+                <p>
+                    <img src="icon-mail-white.png" alt="" class="icon-sm">
+                    <a href="mailto:info@temp.ru">info@temp.ru</a>
+                </p>
+                <p>
+                    <img src="icon-phone.png" alt="" class="icon-sm">
+                    <a href="tel:+78005553535">+7 (800) 555-35-35</a>
+                </p>
+                <p>ИНН: [номер]</p>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2016-2026. ООО "ТЕМП"</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

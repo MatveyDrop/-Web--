@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кабинет администратора — ТЕМП</title>
+</head>
+<body>
+    <header>
+        <div class="header-logo">
+            <img src="logoTemp.jpg" alt="Логотип ТЕМП">
+            <span>ТЕМП</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="index.html" class="logout-btn">Выйти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="dashboard-header">
+            <h1>Добро пожаловать, Надежда</h1>
+            <a href="add-machine.html" class="add-link">Добавить станок</a>
+        </div>
+
+        <table class="dashboard-table">
+            <thead>
+                <tr>
+                    <th>Модель станка</th>
+                    <th>Автор</th>
+                    <th>Дата</th>
+                    <th>Местонахождение</th>
+                    <th>Действия</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Токарный станок 16К20</td>
+                    <td>Виктория</td>
+                    <td>12.07.2026</td>
+                    <td>Волгоградская область</td>
+                    <td>
+                        <div class="action-buttons">
+                            <a href="edit-machine.html" class="btn-icon" title="Редактировать">
+                                <img src="icon-edit.png" alt="Edit">
+                            </a>
+                            <button class="btn-icon" title="Удалить">
+                                <img src="icon-delete.png" alt="Delete">
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Резьбонакатной автомат 5А993</td>
+                    <td>Елена</td>
+                    <td>15.11.2026</td>
+                    <td>Воронежская область</td>
+                    <td>
+                        <div class="action-buttons">
+                            <a href="edit-machine.html" class="btn-icon" title="Редактировать">
+                                <img src="icon-edit.png" alt="Edit">
+                            </a>
+                            <button class="btn-icon" title="Удалить">
+                                <img src="icon-delete.png" alt="Delete">
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div>
+                <p>
+                    <img src="icon-mail-white.png" alt="" class="icon-sm">
+                    <a href="mailto:info@temp.ru">info@temp.ru</a>
+                </p>
+                <p>
+                    <img src="icon-phone.png" alt="" class="icon-sm">
+                    <a href="tel:+78005553535">+7 (800) 555-35-35</a>
+                </p>
+                <p>ИНН: [номер]</p>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2016-2026. ООО "ТЕМП"</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
