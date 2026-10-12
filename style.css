@@ -13,6 +13,7 @@
        --border-color: #D0D0D0;
        --white: #FFFFFF;
        --danger: #EF4444;
+       --stat-border: #105AFE;
    }
    
    * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -40,6 +41,7 @@
    }
    .feature-icon-img { width: 64px; height: 64px; margin: 0 auto 20px; }
    .cloud-icon-img { width: 80px; height: 80px; margin-bottom: 20px; }
+   .icon-phone { transform: rotate(-70deg); }
    
    /* =========================================
       ШАПКА (HEADER) - АДАПТИВНАЯ БЕЗ ПРОКРУТКИ
@@ -61,7 +63,8 @@
    .header-logo img { width: 40px; height: 40px; }
    .header-logo span { font-size: 18px; font-weight: 700; white-space: nowrap; }
    
-   header nav ul { display: flex; align-items: center; flex-wrap: nowrap; }
+   header nav { flex: 1; } /* nav занимает остаток шапки, чтобы «Войти» ушло вправо */
+   header nav ul { display: flex; align-items: center; flex-wrap: nowrap; width: 100%; }
    
    /* Гибкие отступы между пунктами меню */
    header nav li:nth-child(1) { margin-right: clamp(60px, 8vw, 112px); }
@@ -94,6 +97,8 @@
    .btn-outline:hover { background-color: var(--primary); color: var(--white); }
    .btn-white { background-color: var(--white); color: var(--primary); }
    .btn-white:hover { background-color: #f0f0f0; }
+   .btn-outline-white { background-color: transparent; border: 1px solid var(--white); color: var(--white); }
+   .btn-outline-white:hover { background-color: var(--white); color: var(--primary); }
    
    /* =========================================
       ГЛАВНАЯ СТРАНИЦА
@@ -102,11 +107,11 @@
        background-color: var(--hero-bg); color: var(--white); text-align: center;
        padding: 100px 20px; border-radius: 20px; margin-bottom: 60px;
    }
-   .hero h1 { font-size: 48px; font-weight: 700; margin-bottom: 16px; }
-   .hero p { font-size: 24px; font-weight: 500; margin-bottom: 32px; opacity: 0.9; }
+   .hero h1 { font-size: clamp(30px, 8vw, 48px); font-weight: 700; margin-bottom: 16px; }
+   .hero p { font-size: clamp(18px, 4.5vw, 24px); font-weight: 500; margin-bottom: 32px; opacity: 0.9; }
    
    .features { text-align: center; margin-bottom: 60px; }
-   .features h2 { font-size: 36px; font-weight: 700; margin-bottom: 10px; }
+   .features h2 { font-size: clamp(26px, 6vw, 36px); font-weight: 700; margin-bottom: 10px; }
    .features > p { font-size: 20px; color: var(--text-sec); margin-bottom: 40px; }
    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
    .feature-item { text-align: center; }
@@ -117,7 +122,7 @@
        background-color: var(--primary); color: var(--white); text-align: center;
        padding: 80px 20px; border-radius: 20px;
    }
-   .cta h2 { font-size: 36px; font-weight: 700; margin-bottom: 16px; }
+   .cta h2 { font-size: clamp(26px, 6vw, 36px); font-weight: 700; margin-bottom: 16px; }
    .cta p { font-size: 20px; margin-bottom: 40px; opacity: 0.9; }
    .cta-buttons { display: flex; gap: 20px; justify-content: center; }
    
@@ -183,7 +188,7 @@
       ========================================= */
    .back-link { display: inline-block; margin-bottom: 30px; color: var(--primary); font-size: 24px; font-weight: bold; }
    .machine-info { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; margin-bottom: 60px; align-items: start; }
-   .machine-info img { border-radius: 20px; width: 100%; height: 500px; object-fit: cover; }
+   .machine-info > img { border-radius: 20px; width: 100%; height: 500px; object-fit: cover; }
    .machine-details h1 { font-size: 32px; font-weight: 700; margin-bottom: 20px; }
    .machine-details p { font-size: 18px; margin-bottom: 12px; color: var(--text-main); }
    .machine-details .price { font-size: 40px; font-weight: 700; color: var(--primary); margin: 30px 0; }
@@ -198,6 +203,38 @@
    .specs-table th, .specs-table td { padding: 20px; border-bottom: 1px solid var(--border-color); text-align: left; font-size: 16px; }
    .specs-table th { font-weight: 600; width: 50%; color: var(--text-main); }
    
+   /* =========================================
+      О НАС
+      ========================================= */
+   .about-content { text-align: center; }
+   .about-content h1 { font-size: 32px; font-weight: 700; margin-bottom: 24px; }
+   .about-content h2 { font-size: 22px; font-weight: 700; margin: 32px 0 16px; }
+   .about-content h3 { font-size: 20px; font-weight: 700; margin: 20px 0 8px; }
+   .about-content p { font-size: 18px; max-width: 1100px; margin: 0 auto 12px; }
+   .accent { color: var(--primary-hover); }
+
+   .about-content .stats-title { font-size: 36px; margin: 60px 0 32px; }
+   .stats { display: flex; justify-content: center; flex-wrap: wrap; gap: 68px; margin-bottom: 70px; }
+   .stat-card {
+       width: 200px; height: 200px; padding: 12px; border: 1px solid var(--stat-border);
+       border-radius: 30px; background: var(--white);
+       display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
+   }
+   .stat-number { font-size: 36px; font-weight: 500; color: var(--primary-hover); line-height: 1.2; }
+   .stat-name, .stat-label { font-size: 20px; font-weight: 500; line-height: 1.3; }
+
+   .contacts-section {
+       display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+       align-items: start; text-align: left;
+   }
+   .contacts-info h2 { margin-top: 0; }
+   .contacts-info p { max-width: none; margin: 0 0 4px; }
+   .contacts-info h3 { font-size: 18px; font-weight: 600; margin: 18px 0 4px; }
+   .contacts-info a { text-decoration: underline; }
+   .map-container { text-align: center; }
+   .map-container h2 { margin: 0 0 16px; }
+   .map-container iframe { width: 100%; height: 447px; border: 0; border-radius: 20px; }
+
    /* =========================================
       ВХОД / АДМИН / МЕНЕДЖЕР
       ========================================= */
@@ -221,6 +258,7 @@
    .action-buttons { display: flex; gap: 12px; }
    .btn-icon { background: none; border: none; cursor: pointer; padding: 0; display: flex; align-items: center; }
    .btn-icon img { width: 24px; height: 24px; }
+   .table-scroll { overflow-x: auto; }
    
    /* =========================================
       ДОБАВИТЬ / РЕДАКТИРОВАТЬ СТАНОК
@@ -234,8 +272,11 @@
        border: 1px solid var(--border-color); border-radius: 20px; padding: 40px 20px;
        text-align: center; display: flex; flex-direction: column; align-items: center;
        justify-content: center; min-height: 350px; cursor: pointer; background: var(--bg-light);
+       position: relative; overflow: hidden;
    }
    .photo-upload p { color: var(--text-sec); font-size: 16px; font-weight: 500; }
+   .photo-current { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+   .photo-caption { position: relative; z-index: 1; background: rgba(255, 255, 255, 0.8); padding: 5px 10px; border-radius: 10px; }
    .contact-block { margin-top: 30px; }
    .contact-block h3 { text-align: center; font-size: 18px; font-weight: 600; margin-bottom: 20px; }
    .contact-block input {
@@ -254,7 +295,7 @@
        overflow: hidden; height: 62px;
    }
    .segmented-control label {
-       flex: 1; display: flex; align-items: center; justify-content: center;
+       flex: 1 1 auto; padding: 0 12px; white-space: nowrap; display: flex; align-items: center; justify-content: center;
        cursor: pointer; font-family: 'Inter', sans-serif; font-weight: 400;
        font-size: 20px; background: var(--white); color: var(--text-main); transition: 0.2s;
    }
@@ -279,7 +320,8 @@
    @media (max-width: 1024px) {
        header { flex-wrap: wrap; gap: 20px; justify-content: center; }
        .header-logo { margin-right: 0; }
-       header nav ul { gap: 10px; }
+       header nav { flex: 0 1 auto; }
+       header nav ul { gap: 10px; width: auto; }
        header nav li:nth-child(n) { margin-right: 0; }
        .filters-form { flex-direction: column; align-items: stretch; }
        .filter-buttons { flex-direction: row; }
@@ -291,4 +333,27 @@
        .cta-buttons { flex-direction: column; }
        footer .container { flex-direction: column; text-align: center; gap: 20px; }
        footer .copyright { text-align: center; }
+
+       /* шапка помещается в 375px без обрезки */
+       header { padding: 12px 16px; gap: 10px; }
+       header nav ul { flex-wrap: wrap; justify-content: center; gap: 4px; }
+       header nav a, header .logout-btn { font-size: 15px; padding: 6px 12px; }
+
+       .hero { padding: 60px 20px; }
+       .dashboard-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+       .dashboard-header h1 { font-size: 26px; }
+       .dashboard-table { min-width: 640px; }
+       .machine-info { gap: 30px; }
+       .machine-info > img { height: 280px; }
+       .machine-details h1 { font-size: 26px; }
+       .machine-details .price { font-size: 32px; margin: 20px 0; }
+       .machine-actions .btn { padding: 14px; font-size: 16px; }
+       .add-machine-page h1 { font-size: 28px; }
+       .add-machine-form { padding: 24px 16px; gap: 30px; }
+       .segmented-control { flex-direction: column; height: auto; border-radius: 24px; }
+       .segmented-control label { padding: 14px 10px; font-size: 18px; white-space: normal; }
+       .about-content .stats-title { font-size: 28px; }
+       .stats { gap: 20px; }
+       .contacts-section { grid-template-columns: 1fr; }
+       .map-container iframe { height: 320px; }
    }

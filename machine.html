@@ -34,7 +34,7 @@
                 <p class="price">1 500 000 ₽</p>
                 <div class="machine-actions">
                     <a href="tel:+78005553535" class="btn btn-outline">
-                        <img src="icon-phone.png" alt="" class="icon-sm" style="transform: rotate(-70deg);"> Позвонить
+                        <img src="icon-phone.png" alt="" class="icon-sm icon-phone"> Позвонить
                     </a>
                     <a href="mailto:info@temp.ru" class="btn btn-primary">
                         <img src="icon-mail-white.png" alt="" class="icon-sm"> Написать
@@ -53,7 +53,7 @@
             <p>Данный станок находится в Волгоградской области, в рабочем состоянии, отключен.</p>
         </div>
 
-        <div id="characteristics" class="tab-content" style="display: none;">
+        <div id="characteristics" class="tab-content" hidden>
             <h3>Характеристики</h3>
             <table class="specs-table">
                 <tr><th>Масса, кг</th><td>2500</td></tr>
@@ -71,8 +71,8 @@
                     <a href="mailto:info@temp.ru">info@temp.ru</a>
                 </p>
                 <p>
-                    <img src="icon-phone.png" alt="" class="icon-sm" style="transform: rotate(-70deg);">
-                    <a href="tel:+78005553535">+7 (800) 555-35-35</a>
+                    <img src="icon-phone.png" alt="" class="icon-sm icon-phone">
+                    <a href="tel:+79289641260">+7 (928) 964-12-60</a>
                 </p>
                 <p>ИНН: [номер]</p>
             </div>
@@ -89,8 +89,8 @@
                 document.querySelectorAll('.tabs a').forEach(t => t.classList.remove('active'));
                 tab.classList.add('active');
                 const target = tab.getAttribute('href').substring(1);
-                document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
-                document.getElementById(target).style.display = 'block';
+                document.querySelectorAll('.tab-content').forEach(c => c.hidden = true);
+                document.getElementById(target).hidden = false;
             });
         });
     </script>

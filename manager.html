@@ -17,7 +17,7 @@
                 <li><a href="index.html">Главная</a></li>
                 <li><a href="about.html">О нас</a></li>
                 <li><a href="catalog.html">Каталог</a></li>
-                <li><a href="#" class="logout">Выйти</a></li>
+                <li><a href="index.html" class="logout-btn">Выйти</a></li>
             </ul>
         </nav>
     </header>
@@ -28,6 +28,7 @@
             <a href="add-machine.html" class="add-link">Добавить станок</a>
         </div>
 
+        <div class="table-scroll">
         <table class="dashboard-table">
             <thead>
                 <tr>
@@ -46,8 +47,12 @@
                     <td>Ленинградская область</td>
                     <td>
                         <div class="action-buttons">
-                            <button class="btn-icon btn-edit" title="Редактировать">📝</button>
-                            <button class="btn-icon btn-delete" title="Удалить">🗑️</button>
+                            <a href="edit-machine.html" class="btn-icon" title="Редактировать">
+                                <img src="icon-edit.png" alt="Редактировать">
+                            </a>
+                            <button class="btn-icon" title="Удалить">
+                                <img src="icon-delete.png" alt="Удалить">
+                            </button>
                         </div>
                     </td>
                 </tr>
@@ -58,20 +63,31 @@
                     <td>ЮФО</td>
                     <td>
                         <div class="action-buttons">
-                            <button class="btn-icon btn-edit" title="Редактировать">📝</button>
-                            <button class="btn-icon btn-delete" title="Удалить">🗑️</button>
+                            <a href="edit-machine.html" class="btn-icon" title="Редактировать">
+                                <img src="icon-edit.png" alt="Редактировать">
+                            </a>
+                            <button class="btn-icon" title="Удалить">
+                                <img src="icon-delete.png" alt="Удалить">
+                            </button>
                         </div>
                     </td>
                 </tr>
             </tbody>
         </table>
+        </div>
     </main>
 
     <footer>
         <div class="container">
             <div>
-                <p>Email: <a href="mailto:info@temp.ru">info@temp.ru</a></p>
-                <p>Телефон: <a href="tel:+78005553535">+7 (800) 555-35-35</a></p>
+                <p>
+                    <img src="icon-mail-white.png" alt="" class="icon-sm">
+                    <a href="mailto:info@temp.ru">info@temp.ru</a>
+                </p>
+                <p>
+                    <img src="icon-phone.png" alt="" class="icon-sm icon-phone">
+                    <a href="tel:+79289641260">+7 (928) 964-12-60</a>
+                </p>
                 <p>ИНН: [номер]</p>
             </div>
             <div class="copyright">
