@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог — ТЕМП</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-logo">
+            <img src="logoTemp.jpg" alt="Логотип ТЕМП">
+            <span>ТЕМП</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="catalog.html" class="active">Каталог</a></li>
+                <li><a href="login.html">Войти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Каталог промышленного оборудования</h1>
+
+        <section class="filters-section">
+            <form class="filters-form">
+                <div class="search-wrapper">
+                    <img src="icon-search.png" alt="Поиск" class="search-icon">
+                    <input type="text" placeholder="Поиск" aria-label="Поиск по названию и региону" autocomplete="off">
+                </div>
+                
+                <div class="filter-group">
+                    <label for="type">Тип станка</label>
+                    <select id="type">
+                        <option value="">Все типы</option>
+                        <option value="milling">Фрезерные</option>
+                        <option value="lathe">Токарные</option>
+                        <option value="slotting">Долбежные</option>
+                        <option value="drilling">Вертикально-сверлильный</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="condition">Состояние</label>
+                    <select id="condition">
+                        <option value="">Любое</option>
+                        <option value="used">Б/У</option>
+                        <option value="refurbished">Капитальный ремонт</option>
+                        <option value="new">Новый</option>
+                    </select>
+                </div>
+
+                <div class="filter-buttons">
+                    <button type="reset" class="btn-outline">Сбросить</button>
+                    <button type="submit" class="btn-primary">Применить</button>
+                </div>
+            </form>
+        </section>
+
+        <p id="result-count" class="result-count" aria-live="polite"></p>
+
+        <div class="machines-grid"></div>
+
+        <nav class="pagination" aria-label="Пагинация"></nav>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div>
+                <p>
+                    <img src="icon-mail-white.png" alt="" class="icon-sm">
+                    <a href="mailto:info@temp.ru">info@temp.ru</a>
+                </p>
+                <p>
+                    <img src="icon-phone.png" alt="" class="icon-sm icon-phone">
+                    <a href="tel:+79289641260">+7 (928) 964-12-60</a>
+                </p>
+                <p>ИНН: [номер]</p>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2016-2026. ООО "ТЕМП"</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/data.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/validate.js"></script>
+    <script src="js/catalog.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Станок — ТЕМП</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-logo">
+            <img src="logoTemp.jpg" alt="Логотип ТЕМП">
+            <span>ТЕМП</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="catalog.html" class="active">Каталог</a></li>
+                <li><a href="login.html">Войти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <a href="catalog.html" class="back-link">←</a>
+
+        <p id="machine-missing" class="empty-state" hidden>Станок не найден. <a href="catalog.html">Вернуться в каталог</a></p>
+
+        <div id="machine-view">
+            <div class="machine-info">
+                <img id="m-image" alt="">
+                <div class="machine-details">
+                    <h1 id="m-title"></h1>
+                    <p><strong>Состояние:</strong> <span id="m-condition"></span></p>
+                    <p><strong>Местонахождение:</strong> <span id="m-region"></span></p>
+                    <p class="price" id="m-price"></p>
+                    <div class="machine-actions">
+                        <a href="#" id="m-call" class="btn btn-outline">
+                            <img src="icon-phone.png" alt="" class="icon-sm icon-phone"> Позвонить
+                        </a>
+                        <a href="#" id="m-mail" class="btn btn-primary">
+                            <img src="icon-mail-white.png" alt="" class="icon-sm"> Написать
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tabs">
+                <a href="#description" class="active">Описание</a>
+                <a href="#characteristics">Характеристики</a>
+            </div>
+
+            <div id="description" class="tab-content">
+                <h3>Описание</h3>
+                <p id="m-description"></p>
+            </div>
+
+            <div id="characteristics" class="tab-content" hidden>
+                <h3>Характеристики</h3>
+                <table class="specs-table" id="m-specs"></table>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div>
+                <p>
+                    <img src="icon-mail-white.png" alt="" class="icon-sm">
+                    <a href="mailto:info@temp.ru">info@temp.ru</a>
+                </p>
+                <p>
+                    <img src="icon-phone.png" alt="" class="icon-sm icon-phone">
+                    <a href="tel:+79289641260">+7 (928) 964-12-60</a>
+                </p>
+                <p>ИНН: [номер]</p>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2016-2026. ООО "ТЕМП"</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/machine.js"></script>
+</body>
+</html>

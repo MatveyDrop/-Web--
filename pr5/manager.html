@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кабинет менеджера — ТЕМП</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-role="manager">
+    <header>
+        <div class="header-logo">
+            <img src="logoTemp.jpg" alt="Логотип ТЕМП">
+            <span>ТЕМП</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="index.html" class="logout-btn" data-logout>Выйти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="dashboard-header">
+            <h1 id="welcome">Добро пожаловать</h1>
+            <a href="add-machine.html" class="add-link">Добавить станок</a>
+        </div>
+
+        <div class="table-scroll">
+        <table class="dashboard-table">
+            <thead>
+                <tr>
+                    <th>Модель станка</th>
+                    <th>Автор</th>
+                    <th>Дата</th>
+                    <th>Местонахождение</th>
+                    <th>Действия</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div>
+                <p>
+                    <img src="icon-mail-white.png" alt="" class="icon-sm">
+                    <a href="mailto:info@temp.ru">info@temp.ru</a>
+                </p>
+                <p>
+                    <img src="icon-phone.png" alt="" class="icon-sm icon-phone">
+                    <a href="tel:+79289641260">+7 (928) 964-12-60</a>
+                </p>
+                <p>ИНН: [номер]</p>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2016-2026. ООО "ТЕМП"</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/data.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

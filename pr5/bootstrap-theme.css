@@ -1,0 +1,71 @@
+/* =========================================================
+   Тема ТЕМП поверх Bootstrap 5.3.3
+   Подключается ПОСЛЕ bootstrap.min.css (только add-machine / edit-machine)
+   ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* 1. Переменные Bootstrap -> цвета и шрифт из Figma */
+:root {
+    --bs-primary: #3A77FF;
+    --bs-primary-rgb: 58, 119, 255;
+    --bs-secondary: #949494;          /* серый подвал */
+    --bs-secondary-rgb: 148, 148, 148;
+    --bs-link-color: #3A77FF;
+    --bs-link-color-rgb: 58, 119, 255;
+    --bs-link-hover-color: #0040CD;
+    --bs-body-font-family: 'Inter', sans-serif;
+    --bs-body-font-size: 0.875rem;    /* 14px */
+    --bs-body-font-weight: 500;
+    --bs-border-color: #D0D0D0;
+    --bs-border-radius-xl: 20px;      /* .rounded-4 */
+    --bs-border-radius-xxl: 24px;     /* .rounded-5 */
+}
+@media (min-width: 1200px) { .container { max-width: 1200px; } }   /* у Bootstrap 1140 */
+
+/* 2. Кнопки: .btn-primary / .btn-outline-primary зашивают цвета в свои переменные */
+.btn-primary {
+    --bs-btn-bg: #3A77FF;           --bs-btn-border-color: #3A77FF;
+    --bs-btn-hover-bg: #0040CD;     --bs-btn-hover-border-color: #0040CD;
+    --bs-btn-active-bg: #0040CD;    --bs-btn-active-border-color: #0040CD;
+    --bs-btn-disabled-bg: #3A77FF;  --bs-btn-disabled-border-color: #3A77FF;
+    --bs-btn-focus-shadow-rgb: 58, 119, 255;
+}
+.btn-outline-primary {
+    --bs-btn-color: #3A77FF;        --bs-btn-border-color: #3A77FF;
+    --bs-btn-hover-bg: #3A77FF;     --bs-btn-hover-border-color: #3A77FF;
+    --bs-btn-active-bg: #3A77FF;    --bs-btn-active-border-color: #3A77FF;
+    --bs-btn-focus-shadow-rgb: 58, 119, 255;
+}
+.form-control:focus { border-color: #3A77FF; box-shadow: 0 0 0 0.25rem rgba(58, 119, 255, 0.25); }
+.form-check-input:checked { background-color: #3A77FF; border-color: #3A77FF; }
+.form-check-input:focus { border-color: #3A77FF; box-shadow: 0 0 0 0.25rem rgba(58, 119, 255, 0.25); }
+
+/* 3. Шапка: прозрачные кнопки-«пилюли» и отступы как в макете */
+.temp-navbar {
+    --bs-navbar-padding-x: 30px;
+    --bs-navbar-padding-y: 15px;
+    --bs-navbar-color: #000;
+    --bs-navbar-hover-color: #fff;
+    --bs-navbar-active-color: #fff;
+    border: 1px solid var(--bs-border-color);
+    border-top: 0;
+    border-radius: 0 0 20px 20px;
+}
+.temp-navbar .nav-link:hover, .temp-navbar .nav-link.active { background-color: var(--bs-primary); }
+@media (min-width: 992px) {
+    .temp-navbar .navbar-brand { margin-right: clamp(100px, 12vw, 165px); }
+    .temp-navbar .navbar-nav { column-gap: clamp(60px, 8vw, 112px); }
+}
+
+/* 4. Мелочи, которых нет в Bootstrap */
+.icon-phone { transform: rotate(-70deg); }
+.upload-zone { min-height: 350px; cursor: pointer; }
+.upload-zone:focus-within { outline: 2px solid var(--bs-primary); outline-offset: 2px; }
+@media (max-width: 575.98px) {
+    /* у .btn-group нет адаптивного варианта: на телефоне складываем в столбик */
+    .condition-group { flex-direction: column; border-radius: 24px !important; }
+    .condition-group > .btn { border-radius: 0 !important; }
+}
+
+/* Лаба 5: сообщения об ошибках проверки, показываемые кодом */
+.invalid-feedback.is-shown { display: block; }
