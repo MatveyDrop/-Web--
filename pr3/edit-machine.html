@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактировать станок — ТЕМП</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-logo">
+            <img src="logoTemp.jpg" alt="Логотип ТЕМП">
+            <span>ТЕМП</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="index.html" class="logout-btn">Выйти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="add-machine-page">
+        <a href="admin.html" class="back-link">←</a>
+        <h1>Редактировать станок</h1>
+
+        <form class="add-machine-form">
+            <div>
+                <div class="photo-upload">
+                    <img src="16К20.jpeg" alt="Текущее фото" class="photo-current">
+                    <p class="photo-caption">Изменить фото станка</p>
+                    <input type="file" accept="image/*" id="edit-photo" hidden>
+                </div>
+
+                <div class="contact-block">
+                    <h3>Контактные данные</h3>
+                    <input type="email" value="victoria@temp.ru">
+                    <input type="tel" value="+7 (992) 433-12-12">
+                </div>
+            </div>
+
+            <div class="form-fields">
+                <input type="text" value="Токарный станок 16К20">
+
+                <div class="segmented-control">
+                    <input type="radio" name="condition" id="edit-used" checked>
+                    <label for="edit-used">Б/У</label>
+                    
+                    <input type="radio" name="condition" id="edit-new">
+                    <label for="edit-new">Новый</label>
+                    
+                    <input type="radio" name="condition" id="edit-refurbished">
+                    <label for="edit-refurbished">Капитальный ремонт</label>
+                </div>
+
+                <input type="text" value="Токарный">
+                <input type="text" value="Волгоградская область">
+                <input type="number" value="1500000" id="edit-price-input">
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="edit-negotiable">
+                    <label for="edit-negotiable">Цена договорная</label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary submit-btn">Сохранить изменения</button>
+        </form>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div>
+                <p>
+                    <img src="icon-mail-white.png" alt="" class="icon-sm">
+                    <a href="mailto:info@temp.ru">info@temp.ru</a>
+                </p>
+                <p>
+                    <img src="icon-phone.png" alt="" class="icon-sm icon-phone">
+                    <a href="tel:+79289641260">+7 (928) 964-12-60</a>
+                </p>
+                <p>ИНН: [номер]</p>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2016-2026. ООО "ТЕМП"</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const checkbox = document.getElementById('edit-negotiable');
+        const priceInput = document.getElementById('edit-price-input');
+        if(checkbox && priceInput) {
+            checkbox.addEventListener('change', () => {
+                priceInput.disabled = checkbox.checked;
+                if (checkbox.checked) priceInput.value = '';
+            });
+        }
+    </script>
+</body>
+</html>

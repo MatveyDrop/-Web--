@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Токарный станок 16К20 — ТЕМП</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-logo">
+            <img src="logoTemp.jpg" alt="Логотип ТЕМП">
+            <span>ТЕМП</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="catalog.html" class="active">Каталог</a></li>
+                <li><a href="login.html">Войти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <a href="catalog.html" class="back-link">←</a>
+
+        <div class="machine-info">
+            <img src="16К20.jpeg" alt="Токарный станок 16К20">
+            <div class="machine-details">
+                <h1>Токарный станок 16К20</h1>
+                <p><strong>Состояние:</strong> Б/У</p>
+                <p><strong>Местонахождение:</strong> Волгоградская область</p>
+                <p class="price">1 500 000 ₽</p>
+                <div class="machine-actions">
+                    <a href="tel:+78005553535" class="btn btn-outline">
+                        <img src="icon-phone.png" alt="" class="icon-sm icon-phone"> Позвонить
+                    </a>
+                    <a href="mailto:info@temp.ru" class="btn btn-primary">
+                        <img src="icon-mail-white.png" alt="" class="icon-sm"> Написать
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <a href="#description" class="active">Описание</a>
+            <a href="#characteristics">Характеристики</a>
+        </div>
+
+        <div id="description" class="tab-content">
+            <h3>Описание</h3>
+            <p>Данный станок находится в Волгоградской области, в рабочем состоянии, отключен.</p>
+        </div>
+
+        <div id="characteristics" class="tab-content" hidden>
+            <h3>Характеристики</h3>
+            <table class="specs-table">
+                <tr><th>Масса, кг</th><td>2500</td></tr>
+                <tr><th>Диаметр обработки над станиной, мм</th><td>400</td></tr>
+                <tr><th>Диаметр обработки над суппортом, мм</th><td>220</td></tr>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div>
+                <p>
+                    <img src="icon-mail-white.png" alt="" class="icon-sm">
+                    <a href="mailto:info@temp.ru">info@temp.ru</a>
+                </p>
+                <p>
+                    <img src="icon-phone.png" alt="" class="icon-sm icon-phone">
+                    <a href="tel:+79289641260">+7 (928) 964-12-60</a>
+                </p>
+                <p>ИНН: [номер]</p>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2016-2026. ООО "ТЕМП"</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.tabs a').forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.querySelectorAll('.tabs a').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                const target = tab.getAttribute('href').substring(1);
+                document.querySelectorAll('.tab-content').forEach(c => c.hidden = true);
+                document.getElementById(target).hidden = false;
+            });
+        });
+    </script>
+</body>
+</html>
