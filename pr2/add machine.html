@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить станок — ТЕМП</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-logo">
+            <img src="logoTemp.jpg" alt="Логотип ТЕМП">
+            <span>ТЕМП</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="index.html" class="logout-btn">Выйти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="add-machine-page">
+        <a href="admin.html" class="back-link">←</a>
+        <h1>Добавить станок</h1>
+
+        <form class="add-machine-form">
+            <div>
+                <div class="photo-upload">
+                    <img src="icon-cloud.png" alt="Загрузить" class="cloud-icon-img">
+                    <p>Добавить фото станка</p>
+                    <input type="file" accept="image/*" style="display: none;" id="photo">
+                </div>
+
+                <div class="contact-block">
+                    <h3>Контактные данные</h3>
+                    <input type="email" placeholder="name_surname@example.com">
+                    <input type="tel" placeholder="+7 (992) 433-12-12">
+                </div>
+            </div>
+
+            <div class="form-fields">
+                <input type="text" placeholder="Введите название станка">
+
+                <div class="segmented-control">
+                    <input type="radio" name="condition" id="used" checked>
+                    <label for="used">Б/У</label>
+                    
+                    <input type="radio" name="condition" id="new">
+                    <label for="new">Новый</label>
+                    
+                    <input type="radio" name="condition" id="refurbished">
+                    <label for="refurbished">Капитальный ремонт</label>
+                </div>
+
+                <input type="text" placeholder="Укажите тип станка">
+                <input type="text" placeholder="Укажите местоположение станка (регион, округ)">
+                <input type="number" placeholder="Укажите цену станка" id="price-input">
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="negotiable">
+                    <label for="negotiable">Цена договорная</label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary submit-btn">Создать объявление</button>
+        </form>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div>
+                <p>
+                    <img src="icon-mail-white.png" alt="" class="icon-sm">
+                    <a href="mailto:info@temp.ru">info@temp.ru</a>
+                </p>
+                <p>
+                    <img src="icon-phone.png" alt="" class="icon-sm" style="transform: rotate(-70deg);">
+                    <a href="tel:+78005553535">+7 (800) 555-35-35</a>
+                </p>
+                <p>ИНН: [номер]</p>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2016-2026. ООО "ТЕМП"</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const checkbox = document.getElementById('negotiable');
+        const priceInput = document.getElementById('price-input');
+        if(checkbox && priceInput) {
+            checkbox.addEventListener('change', () => {
+                priceInput.disabled = checkbox.checked;
+                if (checkbox.checked) priceInput.value = '';
+            });
+        }
+        const uploadArea = document.querySelector('.photo-upload');
+        const fileInput = document.getElementById('photo');
+        if(uploadArea && fileInput) {
+            uploadArea.addEventListener('click', () => fileInput.click());
+        }
+    </script>
+</body>
+</html>
